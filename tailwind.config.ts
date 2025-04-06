@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,18 +62,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Fitness theme colors
+				// Fitness theme colors with neon aesthetic
 				fitness: {
-					primary: '#3182CE', // Blue for primary actions
-					secondary: '#38B2AC', // Teal for secondary elements
-					accent: '#4FD1C5', // Light teal for accents
-					success: '#48BB78', // Green for success states
-					warning: '#F6AD55', // Orange for warnings
-					danger: '#F56565', // Red for dangerous actions
-					gray: '#718096', // Neutral gray
-					dark: '#2D3748', // Dark shade for text
-					light: '#F7FAFC', // Light background
+					primary: '#00D4FF', // Electric blue for primary actions
+					secondary: '#FF007A', // Hot pink for secondary elements
+					accent: '#9D4EDD', // Purple accent
+					success: '#4EEE94', // Neon green for success states
+					warning: '#FFD700', // Gold for warnings
+					danger: '#FF3131', // Bright red for dangerous actions
+					dark: '#1A1A1A', // Dark background
+					light: '#F8F9FA', // Light text/elements
 				},
+				neon: {
+					blue: '#00D4FF',
+					pink: '#FF007A',
+					purple: '#9D4EDD',
+					green: '#4EEE94',
+				},
+			},
+			fontFamily: {
+				sans: ['Roboto', 'sans-serif'],
+				heading: ['Montserrat', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -109,6 +117,31 @@ export default {
 				'slide-in': {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(0)' }
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						boxShadow: '0 0 15px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 212, 255, 0.4)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 30px rgba(0, 212, 255, 0.9), 0 0 50px rgba(0, 212, 255, 0.6)' 
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'ripple': {
+					'0%': { transform: 'scale(0)', opacity: '1' },
+					'100%': { transform: 'scale(2.5)', opacity: '0' }
+				},
+				'confetti': {
+					'0%': { transform: 'translateY(0) rotate(0)', opacity: '1' },
+					'100%': { transform: 'translateY(-100vh) rotate(720deg)', opacity: '0' }
+				},
+				'zoom-in-out': {
+					'0%': { transform: 'scale(0.95)' },
+					'50%': { transform: 'scale(1.05)' },
+					'100%': { transform: 'scale(1)' }
 				}
 			},
 			animation: {
@@ -116,7 +149,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-light': 'pulse-light 2s ease-in-out infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-in': 'slide-in 0.5s ease-out'
+				'slide-in': 'slide-in 0.5s ease-out',
+				'pulse-neon': 'pulse-neon 2s infinite ease-in-out',
+				'float': 'float 3s infinite ease-in-out',
+				'ripple': 'ripple 0.7s ease-out',
+				'confetti': 'confetti 4s ease-out forwards',
+				'zoom-transition': 'zoom-in-out 0.3s ease-out'
 			}
 		}
 	},
