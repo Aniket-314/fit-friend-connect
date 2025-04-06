@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -155,7 +156,11 @@ export default {
 				'ripple': 'ripple 0.7s ease-out',
 				'confetti': 'confetti 4s ease-out forwards',
 				'zoom-transition': 'zoom-in-out 0.3s ease-out'
-			}
+			},
+			// Adding backface visibility and transform utilities
+			transitionProperty: {
+				'transform': 'transform',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

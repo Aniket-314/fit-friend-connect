@@ -137,32 +137,36 @@
   .confetti {
     @apply absolute w-4 h-4 rounded-sm animate-confetti;
   }
+  
+  /* Adding the carousel 3D perspective within the components layer */
+  .carousel-3d-perspective {
+    perspective: 1000px;
+  }
+  
+  .carousel-3d-item {
+    @apply transform transition-all duration-500;
+    backface-visibility: hidden;
+  }
+  
+  .carousel-3d-item-active {
+    @apply scale-100 z-10;
+    transform: rotateY(0deg);
+  }
+  
+  .carousel-3d-item-prev {
+    @apply scale-90 z-0;
+    transform: rotateY(-15deg);
+  }
+  
+  .carousel-3d-item-next {
+    @apply scale-90 z-0;
+    transform: rotateY(15deg);
+  }
 }
 
 /* Gradient text effect */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-fitness-primary to-fitness-secondary;
-}
-
-/* Carousel 3D effect */
-.carousel-3d-perspective {
-  @apply perspective-[1000px];
-}
-
-.carousel-3d-item {
-  @apply transform transition-all duration-500 backface-visibility-hidden;
-}
-
-.carousel-3d-item-active {
-  @apply scale-100 rotate-y-0 z-10;
-}
-
-.carousel-3d-item-prev {
-  @apply scale-90 rotate-y-[-15deg] z-0;
-}
-
-.carousel-3d-item-next {
-  @apply scale-90 rotate-y-[15deg] z-0;
 }
 
 /* Mobile optimization */
